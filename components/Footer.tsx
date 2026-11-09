@@ -416,7 +416,7 @@ export default function Footer() {
             <button
               type="button"
               onClick={toTop}
-              className="group/top inline-flex h-11 w-fit flex-none items-center gap-2 rounded-xl border border-white/15 px-4 text-sm font-medium text-white/80 transition-colors hover:border-white/30 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5CCFB8]"
+              className="cursor-pointer hover:bg-transparent hover:bg-blend-overlay hover:backdrop-blur-2xl hover:text-white hover:border-white group/top inline-flex h-11 w-fit flex-none items-center gap-2 rounded-xl border border-white/15 px-4 text-sm font-medium text-white/80 transition-colors hover:border-white/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5CCFB8]"
             >
               Back to top
               <ArrowUp className="size-4 transition-transform duration-300 group-hover/top:-translate-y-0.5" />
