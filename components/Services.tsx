@@ -197,12 +197,6 @@ export default function ServicesPage() {
                 <ArrowRight className="size-4 transition-transform duration-300 group-hover/btn:translate-x-0.5" />
               </Link>
 
-              echo "# Hano" >> README.md
-git init
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/ABUBAKAR-DAHIR/Hano.git
-git push -u origin main
               <Link
                 href="/register"
                 className="inline-flex h-11 items-center rounded-xl border border-border px-5 text-sm font-semibold text-foreground transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
