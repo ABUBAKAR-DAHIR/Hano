@@ -105,15 +105,28 @@ function Navbar() {
     >
       <div
         className={clsx(
-          "mx-auto border backdrop-blur-xl backdrop-saturate-150",
+          "relative isolate mx-auto border backdrop-blur-2xl backdrop-saturate-[1.8]",
           "transition-[max-width,border-radius,box-shadow,background-color,border-color] duration-700 motion-reduce:transition-none",
           EASE,
           floating
-            ? "max-w-6xl rounded-2xl border-border/70 shadow-[0_12px_32px_-14px_rgba(16,47,59,0.25)] dark:shadow-[0_12px_32px_-14px_rgba(0,0,0,0.7)]"
-            : "max-w-full rounded-none border-x-transparent border-t-transparent border-b-border/60 shadow-none",
-          open ? "bg-background" : "bg-background/80",
+            ? "max-w-6xl rounded-2xl border-white/60 shadow-[inset_0_1px_0_rgba(255,255,255,0.75),0_16px_40px_-18px_rgba(16,47,59,0.35)] dark:border-white/10 dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_16px_40px_-18px_rgba(0,0,0,0.8)]"
+            : "max-w-full rounded-none border-x-transparent border-t-transparent border-b-white/50 shadow-[inset_0_-1px_0_rgba(16,47,59,0.06)] dark:border-b-white/10",
+          open
+            ? "bg-white/85 dark:bg-neutral-950/85"
+            : floating
+              ? "bg-white/45 dark:bg-neutral-900/40"
+              : "bg-white/30 dark:bg-neutral-950/30",
         )}
       >
+        {/* glass sheen */}
+        <span
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 -z-10 rounded-[inherit] bg-gradient-to-b from-white/60 via-white/15 to-transparent dark:from-white/[0.08] dark:via-white/[0.02]"
+        />
+        <span
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-6 top-0 -z-10 h-px bg-gradient-to-r from-transparent via-white to-transparent opacity-80 dark:via-white/30"
+        />
         <nav
           aria-label="Main"
           className={clsx(
@@ -154,7 +167,7 @@ function Navbar() {
             <span
               aria-hidden="true"
               className={clsx(
-                "pointer-events-none absolute top-1/2 h-9 -translate-y-1/2 rounded-lg bg-accent/70",
+                "pointer-events-none absolute top-1/2 h-9 -translate-y-1/2 rounded-lg bg-white/70 shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_4px_14px_-6px_rgba(16,47,59,0.25)] ring-1 ring-white/70 dark:bg-white/10 dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] dark:ring-white/10",
                 ready && "transition-[left,width,opacity] duration-300",
                 EASE,
                 hoverBox ? "opacity-100" : "opacity-0",
@@ -202,7 +215,7 @@ function Navbar() {
 
           {/* Actions */}
           <div className="flex items-center gap-2 sm:gap-3">
-            <Themer className="inline-flex size-10 cursor-pointer items-center justify-center rounded-lg border border-border bg-transparent text-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" />
+            <Themer className="inline-flex size-10 cursor-pointer items-center justify-center rounded-lg border border-white/60 bg-white/40 text-foreground shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] backdrop-blur transition-colors hover:bg-white/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring dark:border-white/10 dark:bg-white/5 dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] dark:hover:bg-white/10" />
 
             <Link
               href="/shop"
@@ -224,7 +237,7 @@ function Navbar() {
               aria-label={open ? "Close menu" : "Open menu"}
               aria-expanded={open}
               aria-controls="mobile-menu"
-              className="relative inline-flex size-10 items-center justify-center rounded-lg border border-border text-foreground transition-colors hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring md:hidden"
+              className="relative inline-flex size-10 items-center justify-center rounded-lg border border-white/60 bg-white/40 text-foreground shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] backdrop-blur transition-colors hover:bg-white/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring dark:border-white/10 dark:bg-white/5 dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] dark:hover:bg-white/10 md:hidden"
             >
               <span
                 className={clsx(
@@ -255,7 +268,7 @@ function Navbar() {
           )}
         >
           <div className="overflow-hidden">
-            <div className="border-t border-border/60 px-4 pb-5 pt-3 sm:px-6">
+            <div className="border-t border-white/50 px-4 pb-5 pt-3 dark:border-white/10 sm:px-6">
               <ul className="flex flex-col gap-1">
                 {navLinks.map((link, i) => {
                   const active = i === activeIndex;
@@ -275,7 +288,9 @@ function Navbar() {
                         className={clsx(
                           "flex items-center justify-between rounded-xl px-3 py-3 text-base font-medium transition-colors",
                           "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
-                          active ? "bg-accent text-accent-foreground" : "text-foreground hover:bg-muted",
+                          active
+                            ? "bg-white/70 text-accent-foreground shadow-[inset_0_1px_0_rgba(255,255,255,0.9)] ring-1 ring-white/70 dark:bg-white/10 dark:text-foreground dark:ring-white/10"
+                            : "text-foreground hover:bg-white/50 dark:hover:bg-white/5",
                         )}
                       >
                         {link.name}

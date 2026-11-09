@@ -341,7 +341,7 @@ export default function Footer() {
                   H
                 </span>
                 <span className="text-2xl font-bold tracking-tight">
-                  Hano<span className="text-[#5CCFB8]">wallet</span>
+                  Hano<span className="text-hanobright">wallet</span>
                 </span>
               </Link>
               <p className="max-w-xs text-[15px] leading-relaxed text-white/65">
@@ -396,7 +396,7 @@ export default function Footer() {
               "motion-reduce:animate-none motion-reduce:opacity-100",
             )}
             style={{
-              backgroundImage: `radial-gradient(circle 260px at var(--x, 50%) var(--y, -40%), ${TEAL}, rgba(92,207,184,0.35) 45%, rgba(255,255,255,0.09) 75%)`,
+              backgroundImage: `radial-gradient(circle 260px at var(--x, 50%) var(--y, -40%), ${TEAL}, rgb(63, 134, 233) 45%, rgba(255,255,255,0.09) 75%)`,
             }}
           >
             Hanowallet
