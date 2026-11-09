@@ -214,7 +214,9 @@ export default function ProductDetail({ slug }: { slug: string }) {
             <div className="flex flex-col gap-2.5">
               <Link
                 href={quoteHref(p)}
-                className="group/q inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-primary px-5 text-[15px] font-semibold text-primary-foreground shadow-[0_10px_24px_-10px_rgba(31,66,115,0.55)] transition hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 dark:text-neutral-950"
+                className={clsx("group/q inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-primary px-5 text-[15px] font-semibold text-primary-foreground shadow-[0_10px_24px_-10px_rgba(31,66,115,0.55)] transition hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 dark:text-neutral-950",
+                    "border-primary border-2 hover:bg-transparent hover:text-primary dark:hover:text-white transition-all duration-500"
+                )}
               >
                 Request a quote
                 <ArrowRight className="size-4 transition-transform duration-300 group-hover/q:translate-x-0.5" />

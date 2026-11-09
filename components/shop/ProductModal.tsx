@@ -102,7 +102,7 @@ export default function ProductModal({
                   aria-label="Previous product"
                   className="flex size-10 items-center justify-center rounded-full border border-border bg-card/90 text-foreground backdrop-blur transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                 >
-                  <ChevronLeft className="size-5" />
+                  <ChevronLeft className="size-5 cursor-pointer" />
                 </button>
                 <button
                   type="button"
@@ -110,7 +110,7 @@ export default function ProductModal({
                   aria-label="Next product"
                   className="flex size-10 items-center justify-center rounded-full border border-border bg-card/90 text-foreground backdrop-blur transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                 >
-                  <ChevronRight className="size-5" />
+                  <ChevronRight className="size-5 cursor-pointer" />
                 </button>
               </>
             )}
@@ -119,7 +119,7 @@ export default function ProductModal({
               onClick={close}
               aria-label="Close"
               autoFocus
-              className="flex size-10 items-center justify-center rounded-full bg-primary text-primary-foreground transition hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring dark:text-neutral-950"
+              className="cursor-pointer flex size-9 items-center justify-center rounded-full border-2 border-destructive text-destructive hover:bg-destructive hover:text-white duration-500 dark:text-white     transition hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring dark:text-neutral-950"
             >
               <X className="size-5" />
             </button>
@@ -216,14 +216,16 @@ export default function ProductModal({
             <div className="mt-auto flex flex-col gap-2.5 pt-2 sm:flex-row">
               <Link
                 href={quoteHref(product)}
-                className="group/q inline-flex h-12 flex-1 items-center justify-center gap-2 rounded-xl bg-primary px-5 text-[15px] font-semibold text-primary-foreground shadow-[0_10px_24px_-10px_rgba(31,66,115,0.55)] transition hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 dark:text-neutral-950"
+                className="group/q inline-flex h-12 flex-1 items-center justify-center max-md:py-3.5 gap-2 rounded-xl bg-primary px-5 text-[15px] font-semibold text-primary-foreground shadow-[0_10px_24px_-10px_rgba(31,66,115,0.55)] transition hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 dark:text-neutral-950  border-primary border-2 hover:bg-transparent hover:text-primary dark:hover:text-white transition-all duration-500"
               >
                 Request a quote
                 <ArrowRight className="size-4 transition-transform duration-300 group-hover/q:translate-x-0.5" />
               </Link>
               <Link
                 href={`/shop/${product.slug}`}
-                className="inline-flex h-12 flex-1 items-center justify-center rounded-xl border border-border px-5 text-[15px] font-semibold text-foreground transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                className={clsx("inline-flex h-12 max-md:py-3.5 flex-1 items-center justify-center rounded-xl border border-border px-5 text-[15px] font-semibold text-foreground transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring  ",
+                    "border-primary border-2 hover:bg-primary text-primary hover:text-white dark:hover:text-black transition-all duration-500"
+                )}
               >
                 View full details
               </Link>
