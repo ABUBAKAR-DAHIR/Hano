@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="120" viewBox="0 0 1200 120" role="img" aria-labelledby="title">
+<title id="title">Built in Garowe, Somalia</title>
+<defs>
+  <linearGradient id="bg" x1="0" x2="1"><stop offset="0" stop-color="#0a1a30"/><stop offset="1" stop-color="#1f4273"/></linearGradient>
+  <clipPath id="frame"><rect width="1200" height="120" rx="22"/></clipPath>
+</defs>
+<style>
+  .w1{fill:none;stroke:#3ec7b0;stroke-opacity:.35;stroke-width:2;animation:slide 7s linear infinite}
+  .w2{fill:none;stroke:#ffffff;stroke-opacity:.12;stroke-width:2;animation:slide2 5s linear infinite}
+  @keyframes slide{to{transform:translateX(-200px)}}
+  @keyframes slide2{to{transform:translateX(-160px)}}
+  .f{font:700 18px -apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;fill:#fff}
+  .g{font:500 13px -apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;fill:#b5c4da}
+  @media (prefers-reduced-motion: reduce){*{animation:none!important}}
+</style>
+<g clip-path="url(#frame)">
+  <rect width="1200" height="120" fill="url(#bg)"/>
+  <path class="w2" d="M0 78 q40.0 -7 80.0 0 t80.0 0 q40.0 -7 80.0 0 t80.0 0 q40.0 -7 80.0 0 t80.0 0 q40.0 -7 80.0 0 t80.0 0 q40.0 -7 80.0 0 t80.0 0 q40.0 -7 80.0 0 t80.0 0 q40.0 -7 80.0 0 t80.0 0 q40.0 -7 80.0 0 t80.0 0 q40.0 -7 80.0 0 t80.0 0 q40.0 -7 80.0 0 t80.0 0 q40.0 -7 80.0 0 t80.0 0 q40.0 -7 80.0 0 t80.0 0 q40.0 -7 80.0 0 t80.0 0 q40.0 -7 80.0 0 t80.0 0 q40.0 -7 80.0 0 t80.0 0 q40.0 -7 80.0 0 t80.0 0 q40.0 -7 80.0 0 t80.0 0"/>
+  <path class="w1" d="M0 70 q50.0 -10 100.0 0 t100.0 0 q50.0 -10 100.0 0 t100.0 0 q50.0 -10 100.0 0 t100.0 0 q50.0 -10 100.0 0 t100.0 0 q50.0 -10 100.0 0 t100.0 0 q50.0 -10 100.0 0 t100.0 0 q50.0 -10 100.0 0 t100.0 0 q50.0 -10 100.0 0 t100.0 0 q50.0 -10 100.0 0 t100.0 0 q50.0 -10 100.0 0 t100.0 0 q50.0 -10 100.0 0 t100.0 0 q50.0 -10 100.0 0 t100.0 0 q50.0 -10 100.0 0 t100.0 0 q50.0 -10 100.0 0 t100.0 0"/>
+  <text x="600" y="50" class="f" text-anchor="middle">Built with care in Garowe, Somalia</text>
+  <text x="600" y="102" class="g" text-anchor="middle">Hanowallet · mining rigs · hosting · support</text>
+</g>
+</svg>

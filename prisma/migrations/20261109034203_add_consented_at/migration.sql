@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "contact_messages" ADD COLUMN     "consentedAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP;
