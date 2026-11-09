@@ -4,6 +4,7 @@ import clsx from "clsx";
 import Link from "next/link";
 import { useEffect, useRef, useState, type FormEvent, type PointerEvent, type ReactNode } from "react";
 import { ArrowRight, ArrowUp, Check, LifeBuoy, Loader2, Mail, MessageCircle } from "lucide-react";
+import CurrentYear from "./CurrentYear";
 
 /* ------------------------------------------------------------------ */
 /* Content — replace "#" links and contact details with your own.      */
@@ -406,7 +407,7 @@ export default function Footer() {
         <div className="relative border-t border-white/10 bg-[#0C1F37]">
           <div className="mx-auto flex max-w-[1360px] flex-col gap-5 px-6 py-6 sm:px-10 md:flex-row md:items-center md:justify-between">
             <div className="flex flex-col gap-1.5">
-              <p className="text-sm text-white/70">© {new Date().getFullYear()} Hanowallet. All rights reserved.</p>
+              <p className="text-sm text-white/70">© <CurrentYear /> Hanowallet. All rights reserved.</p>
               <p className="max-w-2xl text-xs leading-relaxed text-white/50">
                 Bitcoin mining involves financial risk. Rewards depend on network difficulty, Bitcoin&rsquo;s price and
                 energy costs, and past results don&rsquo;t guarantee future earnings.
