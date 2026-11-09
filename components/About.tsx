@@ -360,7 +360,7 @@ export default function AboutPage() {
             </div>
             <div className="flex flex-wrap justify-center gap-2.5">
               <Link
-                href="/register"
+                href="/shop"
                 className="group/btn inline-flex h-11 items-center gap-2 rounded-xl bg-primary px-5 text-sm font-semibold text-primary-foreground transition hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 dark:text-neutral-950 border-primary border-2 hover:bg-transparent hover:text-primary dark:hover:text-white transition-all duration-500"
               >
                 Get started

@@ -3,7 +3,7 @@
 import clsx from "clsx";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState, type MouseEvent as ReactMouseEvent } from "react";
 import { ArrowRight } from "lucide-react";
 import Themer from "./Themer";
 
@@ -74,6 +74,15 @@ function Navbar() {
   }, [activeIndex]);
 
   const showPill = (el: HTMLElement) => setHoverBox({ left: el.offsetLeft, width: el.offsetWidth });
+
+  /* soft light inside the glass pill that follows the cursor */
+  const pillRef = useRef<HTMLSpanElement>(null);
+  const moveGlow = (e: ReactMouseEvent) => {
+    const pill = pillRef.current;
+    if (!pill) return;
+    const r = pill.getBoundingClientRect();
+    pill.style.setProperty("--gx", `${e.clientX - r.left}px`);
+  };
 
   /* ---------- mobile menu behaviour ---------- */
   useEffect(() => setOpen(false), [pathname]);
@@ -161,19 +170,31 @@ function Navbar() {
           <ul
             ref={listRef}
             onMouseLeave={() => setHoverBox(null)}
+            onMouseMove={moveGlow}
             className="relative hidden items-center gap-1 md:flex"
           >
-            {/* hover pill */}
+            {/* hover pill — liquid glass */}
             <span
+              ref={pillRef}
               aria-hidden="true"
               className={clsx(
-                "pointer-events-none absolute top-1/2 h-9 -translate-y-1/2 rounded-lg bg-white/70 shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_4px_14px_-6px_rgba(16,47,59,0.25)] ring-1 ring-white/70 dark:bg-white/10 dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] dark:ring-white/10",
-                ready && "transition-[left,width,opacity] duration-300",
+                "pointer-events-none absolute top-1/2 h-9 -translate-y-1/2 overflow-hidden rounded-xl",
+                // light mode: layered glass
+                "border border-white/90 bg-[linear-gradient(180deg,rgba(255,255,255,0.88),rgba(255,255,255,0.5))] backdrop-blur-md backdrop-saturate-150",
+                "shadow-[inset_0_1px_0_rgba(255,255,255,1),inset_0_-1px_0_rgba(31,66,115,0.08),0_1px_2px_rgba(31,66,115,0.08),0_8px_20px_-10px_rgba(31,66,115,0.45)]",
+                // dark mode: smoky glass
+                "dark:border-white/10 dark:bg-[linear-gradient(180deg,rgba(255,255,255,0.12),rgba(255,255,255,0.04))] dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.14),0_8px_20px_-10px_rgba(0,0,0,0.8)]",
+                ready && "transition-[left,width,opacity,scale] duration-300",
                 EASE,
-                hoverBox ? "opacity-100" : "opacity-0",
+                hoverBox ? "scale-100 opacity-100" : "scale-90 opacity-0",
               )}
               style={{ left: hoverBox?.left ?? activeBox?.left ?? 0, width: hoverBox?.width ?? activeBox?.width ?? 0 }}
-            />
+            >
+              {/* top reflection */}
+              <span className="absolute inset-x-1 top-0 h-1/2 rounded-t-[10px] bg-gradient-to-b from-white/90 to-white/0 dark:from-white/10" />
+              {/* light that follows the cursor */}
+              <span className="absolute inset-0 bg-[radial-gradient(circle_42px_at_var(--gx,50%)_60%,rgba(92,207,184,0.35),transparent_70%)] dark:bg-[radial-gradient(circle_42px_at_var(--gx,50%)_60%,rgba(92,207,184,0.22),transparent_70%)]" />
+            </span>
             {/* active underline */}
             {activeBox && (
               <span
@@ -203,7 +224,7 @@ function Navbar() {
                     className={clsx(
                       "relative z-10 block rounded-lg px-3.5 py-2 text-[15px] font-medium transition-colors duration-200",
                       "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
-                      active ? "text-primary" : "text-muted-foreground hover:text-foreground",
+                      active ? "text-primary" : "text-muted-foreground hover:text-primary dark:hover:text-foreground",
                     )}
                   >
                     {link.name}
