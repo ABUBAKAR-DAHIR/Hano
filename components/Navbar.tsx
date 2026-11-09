@@ -107,7 +107,7 @@ function Navbar() {
     <header
       className={clsx(
         "fixed inset-x-0 top-0 z-50 animate-nav-in motion-reduce:animate-none",
-        "transition-[padding] duration-700 motion-reduce:transition-none",
+        "transition-[padding] duration-700 motion-reduce:transition-none backdrop-blur-md",
         EASE,
         floating ? "px-3 pt-3 sm:px-4 sm:pt-4" : "px-0 pt-0",
       )}
