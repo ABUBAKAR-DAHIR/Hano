@@ -409,7 +409,7 @@ export default function FeaturedRigs() {
             efficiency and power side by side, then start mining with confidence today.
           </p>
           <Link
-            href="/register"
+            href="/shop"
             className="group/cta inline-flex h-12 flex-none items-center gap-2 rounded-xl bg-[#5CCFB8] px-6 text-[15px] font-semibold text-[#102F3B] transition hover:brightness-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#1F4273] border-[#5CCFB8] border-2 hover:bg-transparent hover:text-[#5CCFB8] dark:hover:text-white transition-all duration-500"
           >
             Start mining

@@ -198,7 +198,7 @@ export default function ServicesPage() {
               </Link>
 
               <Link
-                href="/register"
+                href="/shop"
                 className="inline-flex h-11 items-center rounded-xl border border-border px-5 text-sm font-semibold text-foreground transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               >
                 Get started
