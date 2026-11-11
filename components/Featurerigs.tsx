@@ -31,10 +31,10 @@ type Rig = {
 };
 
 const rigs: Rig[] = [
-  { id: "s21-xp", name: "Antminer S21 XP", maker: "Bitmain", cooling: "Air-cooled", hashrate: 270, efficiency: 13.5, power: 3645, image: "/rigs/antminer-s21-xp.png" },
-  { id: "s21-pro", name: "Antminer S21 Pro", maker: "Bitmain", cooling: "Air-cooled", hashrate: 234, efficiency: 15, power: 3510, image: "/rigs/antminer-s21-pro.png" },
-  { id: "s21-hydro", name: "Antminer S21 Hydro", maker: "Bitmain", cooling: "Hydro-cooled", hashrate: 335, efficiency: 16, power: 5360, image: "/rigs/antminer-s21-hydro.png" },
-  { id: "m60s", name: "Whatsminer M60S", maker: "MicroBT", cooling: "Air-cooled", hashrate: 186, efficiency: 18.5, power: 3441, image: "/rigs/whatsminer-m60s.png" },
+  { id: "bitmain-miner-s21-xp", name: "Antminer S21 XP", maker: "Bitmain", cooling: "Air-cooled", hashrate: 270, efficiency: 13.5, power: 3645, image: "/rigs/antminer-s21-xp.png" },
+  { id: "bitmain-miner-s21-pro", name: "Antminer S21 Pro", maker: "Bitmain", cooling: "Air-cooled", hashrate: 234, efficiency: 15, power: 3510, image: "/rigs/antminer-s21-pro.png" },
+  { id: "bitmain-miner-s21-hydro", name: "Antminer S21 Hydro", maker: "Bitmain", cooling: "Hydro-cooled", hashrate: 335, efficiency: 16, power: 5360, image: "/rigs/antminer-s21-hydro.png" },
+  { id: "microbt-whatsminer-m60s", name: "Whatsminer M60S", maker: "MicroBT", cooling: "Air-cooled", hashrate: 186, efficiency: 18.5, power: 3441, image: "/rigs/whatsminer-m60s.png" },
 ];
 
 const MAX_HASH = Math.max(...rigs.map((r) => r.hashrate));
